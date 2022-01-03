@@ -1,0 +1,8 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.options": {
+        "rulePaths": ["./node_modules/eslint-plugin-fiori-custom/lib/rules"]
+    }
+}
