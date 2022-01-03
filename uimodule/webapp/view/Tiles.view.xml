@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="com.ah.uimodule.controller.Tiles"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+    <Page 
+        id="tiles"
+        showHeader="false">
+        <l:HorizontalLayout
+            content="{tiles>/}"
+            allowWrapping="true">
+            <GenericTile
+                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                header="{tiles>title}"
+                press="onTilePress(${tiles>route})">
+            </GenericTile>
+        </l:HorizontalLayout>
+    </Page>
+</mvc:View>
