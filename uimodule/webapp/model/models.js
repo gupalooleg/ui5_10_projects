@@ -13,7 +13,8 @@ sap.ui.define([
         },
 
         createTilesModel: function (){
-            return new JSONModel("./model/tiles.json");
+            const sUrl = sap.ui.require.toUrl("com/ah/uimodule/model/tiles.json");
+            return new JSONModel(sUrl);
         },
 
         createTimerModel: function(){
