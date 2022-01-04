@@ -66,6 +66,14 @@
           "earlyRequests": true,
           "groupId": "$direct"
         }
+      },
+      "covidHistory": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "https://api.rootnet.in/covid19-in/stats/history"
+      },
+      "covidLatest": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "https://api.rootnet.in/covid19-in/stats/latest"
       }
     },
     "resources": {
@@ -99,6 +107,27 @@
           "target": [
             "Countdown"
           ]
+        },
+        {
+          "name": "CovidHistory",
+          "pattern": "covidHistory",
+          "target": [
+            "CovidHistory"
+          ]
+        },
+        {
+          "name": "CovidLatestList",
+          "pattern": "covidLatestList",
+          "target": [
+            "CovidLatestList"
+          ]
+        },
+        {
+          "name": "CovidLatestPieChart",
+          "pattern": "covidLatestPieChart",
+          "target": [
+            "CovidLatestPieChart"
+          ]
         }
       ],
       "targets": {
@@ -115,6 +144,27 @@
           "clearControlAggregation": false,
           "viewId": "Countdown",
           "viewName": "countdown.Countdown"
+        },
+        "CovidHistory": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CovidHistory",
+          "viewName": "covid.CovidHistory"
+        },
+        "CovidLatestList": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CovidLatestList",
+          "viewName": "covid.CovidLatestList"
+        },
+        "CovidLatestPieChart": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CovidLatestPieChart",
+          "viewName": "covid.CovidLatestPieChart"
         }
       }
     },

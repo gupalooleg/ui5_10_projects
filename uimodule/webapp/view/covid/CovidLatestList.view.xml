@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="com.ah.uimodule.controller.covid.CovidLatestList"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page 
+        id="covid"
+        showHeader="false">
+        <List 
+            headerText="Latest covid data (total: {covidLatest>/data/summary/total})"
+            items="{
+                path: 'covidLatest>/data/regional',
+                sorter: {
+                    path: 'totalConfirmed',
+                    descending: true
+                }
+            }"
+        >
+            <items>
+                <StandardListItem
+                    description="Total cases: {covidLatest>totalConfirmed}"
+                    info="Death: {covidLatest>deaths}"
+                    title="{covidLatest>loc}"
+                >
+                    
+                </StandardListItem>
+            </items>
+            
+        </List>
+
+    </Page>
+</mvc:View>
