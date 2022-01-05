@@ -6,5 +6,9 @@
     {
         "title": "Covid 19",
         "route": "CovidHistory"
+    },
+    {
+        "title": "Vaccination tracker",
+        "route": "Vaccination"
     }
 ]

@@ -1,0 +1,108 @@
+<mvc:View
+	controllerName="com.ah.uimodule.controller.vaccination.Vaccination"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+    xmlns:unified="sap.ui.unified"
+	displayBlock="true">
+    <Page
+        title="Vaccination tracker"
+        titleAlignment="Center">
+        <subHeader>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <RadioButton
+                    groupName="viewType"
+                    text="Table"
+                    valueState="Success"
+                    selected="{settings>/viewTypeGRRB/tableRB}"
+                />
+                <RadioButton
+                    groupName="viewType"
+                    text="Calendar"
+                    valueState="Information"
+                    selected="{settings>/viewTypeGRRB/calendarRB}"
+                />
+                <ToolbarSpacer/>
+            </Toolbar>
+        </subHeader>
+        <Table
+            visible="{settings>/viewTypeGRRB/tableRB}"
+            items="{
+                path: 'vaccines>/',
+                sorter: {
+                    path: 'vaccine'
+                }
+            }">
+            <columns>
+                <Column
+                    width="12em">
+                    <Text text="Vaccination name" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center">
+                    <Text text="Company" />
+                </Column>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="Center">
+                    <Text text="Type of vaccination" />
+                </Column>
+                <Column
+                    hAlign="End">
+                    <Text text="Date given/To be given" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    <cells>
+                        <ObjectIdentifier
+                            title="{vaccines>vaccine}" />
+                        <Text
+                            text="{vaccines>company}" />
+                        <Text
+                            text="{vaccines>type}" />
+                        <ObjectStatus
+                            state="{ 
+                                path: 'vaccines>date',
+                                formatter: '.formatStatus'
+                            }"
+                            text="{vaccines>date}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <SinglePlanningCalendar
+			id="SPC1"
+			class="sapUiSmallMarginTop"
+            visible="{settings>/viewTypeGRRB/calendarRB}"
+			title= "My Calendar"
+			startDate="{path: 'settings>/startDate'}"
+			appointments="{path: 'vaccines>/'}">
+			<views>
+				<SinglePlanningCalendarDayView key="DayView" title="Day" />
+				<SinglePlanningCalendarWorkWeekView key="WorkWeekView" title="Work Week" />
+				<SinglePlanningCalendarWeekView key="WeekView" title="Week" />
+				<SinglePlanningCalendarMonthView key="MonthView" title="Month" />
+			</views>
+			<appointments>
+				<unified:CalendarAppointment
+					title= "{vaccines>vaccine}"
+					text= "{vaccines>company}"
+                    type= "{vaccines>caType}"
+					startDate= "{
+                        path: 'vaccines>date',
+                        formatter: '.formatDate'
+                        }"
+					endDate= "{
+                        path: 'vaccines>date',
+                        formatter: '.formatDate'
+                        }">
+				</unified:CalendarAppointment>
+			</appointments>
+		</SinglePlanningCalendar>        
+    </Page>
+</mvc:View>

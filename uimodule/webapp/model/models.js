@@ -24,6 +24,21 @@ sap.ui.define([
                 minutes: 0,
                 seconds: 0
             });
+        },
+
+        createVaccinesModel: function(){
+            var sUrl = sap.ui.require.toUrl("com/ah/uimodule/model/vaccines.json");
+            return new JSONModel(sUrl);
+        },
+
+        createVaccinationViewSettingsModel: function(){
+            return new JSONModel({
+                "viewTypeGRRB": {
+                    "tableRB": true,
+                    "calendarRB": false
+                },
+                "startDate": new Date()
+            });
         }
 
     };

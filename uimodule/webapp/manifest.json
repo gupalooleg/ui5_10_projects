@@ -128,6 +128,13 @@
           "target": [
             "CovidLatestPieChart"
           ]
+        },
+        {
+          "name": "Vaccination",
+          "pattern": "vaccination",
+          "target": [
+            "Vaccination"
+          ]
         }
       ],
       "targets": {
@@ -165,6 +172,13 @@
           "clearControlAggregation": false,
           "viewId": "CovidLatestPieChart",
           "viewName": "covid.CovidLatestPieChart"
+        },
+        "Vaccination": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Vaccination",
+          "viewName": "vaccination.Vaccination"
         }
       }
     },
