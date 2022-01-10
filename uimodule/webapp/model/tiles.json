@@ -10,5 +10,10 @@
     {
         "title": "Vaccination tracker",
         "route": "Vaccination"
+    },
+    {
+        "title": "Pollution tracker",
+        "route": "Pollution",
+        "url": "http://localhost:8090/index.html"
     }
 ]
