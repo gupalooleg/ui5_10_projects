@@ -1,0 +1,111 @@
+{
+  "_version": "1.32.0",
+  "sap.app": {
+    "id": "com.ah.uimodule1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.97.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ah.uimodule1.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "rootView": {
+      "viewName": "com.ah.uimodule1.view.Main",
+      "type": "XML",
+      "async": true,
+      "id": "Main"
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.ah.uimodule1.view",
+        "controlId": "pollution",
+        "transition": "slide",
+	      "bypassed": {},
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "master",
+          "pattern": ":layout:",
+          "target": [
+            "master"
+          ]
+        },
+        {
+            "pattern": "detail/{country}/{layout}",
+            "name": "detail",
+            "target": ["master", "detail"]
+        },
+        {
+            "pattern": "detail/{country}/{state}/{layout}",
+            "name": "detailDetail",
+            "target": ["master", "detail", "detailDetail"]
+        }
+      ],
+      "targets": {
+        "master": {
+          "viewName": "Master",
+          "viewId": "master",
+          "controlAggregation": "beginColumnPages"
+        },
+        "detail": {
+          "viewName": "Detail",
+          "controlAggregation": "midColumnPages"
+        },
+        "detailDetail": {
+          "viewName": "DetailDetail",
+          "controlAggregation": "endColumnPages"
+        }
+      }
+    }
+  }
+}

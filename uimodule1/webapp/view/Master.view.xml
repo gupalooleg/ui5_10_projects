@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="com.ah.uimodule1.controller.Master"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage
+        id="dynamicPageId"
+		toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Countries wise pollution"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+            <VBox
+                fitContainer="true">
+                <Table
+                    id="countriesPollutionTable"
+                    inset="false"
+                    items="{countries>/}"
+                    class="sapFDynamicPageAlignContent"
+                    width="auto">
+                    <columns>
+                        <Column width="12em">
+                            <Text text="Country" />
+                        </Column>
+                        <Column	hAlign="End">
+                            <Text text="AQI" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation" press="onCountryListItemPress">
+                            <cells>
+                                <ObjectIdentifier title="{countries>country}" text="{countries>AQI}"/>
+                                <ObjectNumber number="{countries>AQI}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>
