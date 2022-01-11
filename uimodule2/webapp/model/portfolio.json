@@ -1,0 +1,67 @@
+{
+    "name": "Aleh Hupalo",
+    "email": "test@gmail.com",
+    "jobFunction": "Software Engineer",
+    "phone": "+37529 1111111",
+    "company": "Company name",
+    "education": [
+        {
+            "institution": "Belarusian State University of Informatics and Radioelectronics",
+            "degree": "Specialist",
+            "year": 2011
+        },
+        {
+            "institution": "Belarusian State University of Informatics and Radioelectronics",
+            "degree": "Master",
+            "year": 2012
+        }
+    ],
+    "courses": [
+        {
+            "name": "JavaScript/Front-end",
+            "year": 2021
+        },
+        {
+            "name": "Node.js",
+            "year": 2022
+        }
+    ],
+    "employments": [
+        {
+            "name": "Company name 1",
+            "projects": [
+                {
+                    "name": "Project 1",
+                    "type": "Development",
+                    "projects": [
+                        {
+                            "name": "Report 1",
+                            "type": "Report development"
+                        },
+                        {
+                            "name": "Report 2",
+                            "type": "Report development"
+                        }
+                    ]
+                },
+                {
+                    "name": "Project 2",
+                    "type": "Support"
+                }
+            ]
+        },
+        {
+            "name": "Company name 2",
+            "projects": [
+                {
+                    "name": "Project 3",
+                    "type": "Development"
+                },
+                {
+                    "name": "Project 4",
+                    "type": "Support"
+                }
+            ]
+        }
+    ]
+}
