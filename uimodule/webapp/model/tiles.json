@@ -15,5 +15,10 @@
         "title": "Pollution tracker",
         "route": "Pollution",
         "url": "http://localhost:8090/index.html"
+    },
+    {
+        "title": "Portfolio",
+        "route": "Portfolio",
+        "url": "http://localhost:8091/index.html"
     }
 ]
